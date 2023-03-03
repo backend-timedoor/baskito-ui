@@ -1,5 +1,5 @@
 {
-  "name": "baskito-ui",
+  "name": "@timedoor/baskito-ui",
   "displayName": "Baskito Component",
   "description": "Baskito Component using Vue 3 and Bootstrap 4",
   "version": "0.0.1",
