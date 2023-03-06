@@ -1,1 +1,1 @@
-declare module 'baskito-ui'
+declare module '@timedoor/baskito-ui'
