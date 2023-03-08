@@ -35,12 +35,16 @@
     "release": "pnpm run build && changeset publish"
   },
   "peerDependencies": {
-    "vue": "^3.2.45"
+    "vue": "^3.2.45",
+    "@inertiajs/inertia": "^0.11.1",
+    "@inertiajs/inertia-vue3": "^0.6.0"
   },
   "dependencies": {
     "@vueuse/core": "^9.11.1"
   },
   "devDependencies": {
+    "@inertiajs/inertia": "^0.11.1",
+    "@inertiajs/inertia-vue3": "^0.6.0",
     "@changesets/cli": "^2.26.0",
     "@popperjs/core": "^2.11.6",
     "@types/bootstrap": "^5.2.6",
