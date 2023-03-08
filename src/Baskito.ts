@@ -6,7 +6,8 @@ import * as Components from './components'
 // This allows intellisense in templates w/out direct importing
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    BKButton: typeof Components.BKButton
+    BKButton: typeof Components.BKButton,
+    BKLinkButton: typeof Components.BKLinkButton,
   }
 }
 
