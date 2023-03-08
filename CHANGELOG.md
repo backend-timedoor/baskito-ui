@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.2
+
+### Patch Changes
+
+- a46ec95: Add pagination component
+
 ## 0.1.1
 
 ### Patch Changes
