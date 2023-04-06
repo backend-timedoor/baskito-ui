@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "./dist/baskito.umd.js",
   "module": "./dist/baskito.es.js",
+  "sass": "./scss/stisla.scss",
   "exports": {
     ".": {
       "import": "./dist/baskito.es.js",
