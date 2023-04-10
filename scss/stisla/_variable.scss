@@ -1,33 +1,76 @@
 $colors: (
-  primary:    		#6777ef,
-  secondary:      #cdd3d8,
-  success:        #47c363,
-  info:           #3abaf4,
-  warning:        #ffa426,
-  danger:         #fc544b,
-  light:          #e3eaef,
-  grey:  		      #868e96,
-  whitesmoke:     #f7f9f9,
-  dark:       		#191d21,
-  muted:          #98a6ad,
-  body:           #f4f6f9,
-  font:           #6c757d,
-  fontdark:       #34395e,
-  white:          #ffffff,
-
+  primary:
+    if(map-has-key($colors, "primary"), map-get($colors, "primary"), #6777ef),
+  secondary:
+    if(
+      map-has-key($colors, "secondary"),
+      map-get($colors, "secondary"),
+      #cdd3d8
+    ),
+  success:
+    if(map-has-key($colors, "success"), map-get($colors, "success"), #47c363),
+  info: if(map-has-key($colors, "info"), map-get($colors, "info"), #3abaf4),
+  warning:
+    if(map-has-key($colors, "warning"), map-get($colors, "warning"), #ffa426),
+  danger:
+    if(map-has-key($colors, "danger"), map-get($colors, "danger"), #fc544b),
+  light: if(map-has-key($colors, "light"), map-get($colors, "light"), #e3eaef),
+  grey: if(map-has-key($colors, "grey"), map-get($colors, "grey"), #868e96),
+  whitesmoke:
+    if(
+      map-has-key($colors, "whitesmoke"),
+      map-get($colors, "whitesmoke"),
+      #f7f9f9
+    ),
+  dark: if(map-has-key($colors, "dark"), map-get($colors, "dark"), #191d21),
+  muted: if(map-has-key($colors, "muted"), map-get($colors, "muted"), #98a6ad),
+  body: if(map-has-key($colors, "body"), map-get($colors, "body"), #f4f6f9),
+  font: if(map-has-key($colors, "font"), map-get($colors, "font"), #6c757d),
+  fontdark:
+    if(map-has-key($colors, "fontdark"), map-get($colors, "fontdark"), #34395e),
+  white: if(map-has-key($colors, "white"), map-get($colors, "white"), #ffffff),
   // Form Control
-  formcontrol_normal_background:    #fdfdff,
-  formcontrol_normal_border:        #e4e6fc,
-  formcontrol_focus_background:     #fefeff,
-  formcontrol_focus_border:         #95a0f4,
-
+  formcontrol_normal_background:
+    if(
+      map-has-key($colors, "formcontrol_normal_background"),
+      map-get($colors, "formcontrol_normal_background"),
+      #fdfdff
+    ),
+  formcontrol_normal_border:
+    if(
+      map-has-key($colors, "formcontrol_normal_border"),
+      map-get($colors, "formcontrol_normal_border"),
+      #e4e6fc
+    ),
+  formcontrol_focus_background:
+    if(
+      map-has-key($colors, "formcontrol_focus_background"),
+      map-get($colors, "formcontrol_focus_background"),
+      #fefeff
+    ),
+  formcontrol_focus_border:
+    if(
+      map-has-key($colors, "formcontrol_focus_border"),
+      map-get($colors, "formcontrol_focus_border"),
+      #95a0f4
+    ),
   // Utilities
-  section_title_line: #6777ef,
+  section_title_line:
+    if(
+      map-has-key($colors, "section_title_line"),
+      map-get($colors, "section_title_line"),
+      #6777ef
+    )
 );
 
-$font_family:   'Nunito', 'Segoe UI', arial;
-$font_weight:   400;
-$font_size:     14px;
+$default_font_family: "Nunito", "Segoe UI", arial;
+$font_family: if(
+  variable-exists("font_family"),
+  $font_family,
+  $default_font_family
+);
+$font_weight: if(variable-exists("font_weight"), $font_weight, 400);
+$font_size: if(variable-exists("font_weight"), $font_weight, 14px);
 
 $grid-breakpoints: (
   xs: 0,
@@ -36,4 +79,3 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px
 ) !default;
-
