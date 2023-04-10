@@ -70,7 +70,7 @@ $font_family: if(
   $default_font_family
 );
 $font_weight: if(variable-exists("font_weight"), $font_weight, 400);
-$font_size: if(variable-exists("font_weight"), $font_weight, 14px);
+$font_size: if(variable-exists("font_size"), $font_size, 14px);
 
 $grid-breakpoints: (
   xs: 0,
