@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.5
+
+### Patch Changes
+
+- c58233f: Update Inertia to version 1 & SASS variable
+
 ## 0.1.4
 
 ### Patch Changes
