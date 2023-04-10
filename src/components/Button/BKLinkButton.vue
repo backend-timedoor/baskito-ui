@@ -12,7 +12,7 @@
   } from "../../types/components";
   import { useBKButton } from "../../composables/Button/useBKButton";
   import { computed, PropType } from "vue";
-  import { Link } from "@inertiajs/inertia-vue3";
+  import { Link } from '@inertiajs/vue3'
   
   const { getClassVariant, getClassSize, getClassShape } = useBKButton();
   
