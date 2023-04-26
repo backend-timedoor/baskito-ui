@@ -20,7 +20,8 @@
     "!src/**/*.spec.ts",
     "!src/**/*.spec.js",
     "!src/App.vue",
-    "!src/main.ts"
+    "!src/main.ts",
+    "!scss/sample.scss"
   ],
   "types": "./dist/Baskito.d.ts",
   "private": false,
