@@ -10,6 +10,7 @@ declare module "@vue/runtime-core" {
     BKLinkButton: typeof Components.BKLinkButton;
     BKPagination: typeof Components.BKPagination;
     BKInput: typeof Components.BKInput;
+    BKSelect: typeof Components.BKSelect;
     BKModal: typeof Components.BKModal;
   }
 }
