@@ -11,6 +11,7 @@ declare module "@vue/runtime-core" {
     BKPagination: typeof Components.BKPagination;
     BKInput: typeof Components.BKInput;
     BKSelect: typeof Components.BKSelect;
+    BKModal: typeof Components.BKModal;
   }
 }
 
