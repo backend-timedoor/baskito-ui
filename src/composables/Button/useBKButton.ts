@@ -1,4 +1,9 @@
-import { BKButtonShape, BKButtonSize, BKButtonVariant } from '../../types/components';
+import {
+  BKButtonColor,
+  BKButtonShape,
+  BKButtonSize,
+  BKButtonVariant
+} from "../../types/components";
 
 export function useBKButton() {
   const variants = {
@@ -32,7 +37,14 @@ export function useBKButton() {
     square: "rounded-0"
   };
 
-  const getClassVariant = (variant: BKButtonVariant) => variants[variant];
+  const getClassVariant = (
+    variant: BKButtonVariant,
+    color: BKButtonColor
+  ): string => {
+    if (variant === "outline") return variants[`outline-${color}`];
+
+    return variants[color];
+  };
 
   const getClassSize = (size: BKButtonSize) => sizes[size];
 

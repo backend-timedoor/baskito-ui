@@ -13,7 +13,8 @@
 import type {
   BKButtonSize,
   BKButtonVariant,
-  BKButtonShape
+  BKButtonShape,
+  BKButtonColor
 } from "../../types/components";
 import { useBKButton } from "../../composables/Button/useBKButton";
 import { computed, PropType } from "vue";
@@ -22,6 +23,10 @@ import { router } from "@inertiajs/vue3";
 const { getClassVariant, getClassSize, getClassShape } = useBKButton();
 
 const props = defineProps({
+  color: {
+    type: String as PropType<BKButtonColor>,
+    default: "primary"
+  },
   variant: {
     type: String as PropType<BKButtonVariant>,
     default: "primary"
@@ -59,7 +64,7 @@ const buttonClass = computed(() => [
     "btn-block": props.block,
     "btn-progress": props.progress
   },
-  getClassVariant(props.variant),
+  getClassVariant(props.variant, props.color),
   getClassSize(props.size),
   getClassShape(props.shape)
 ]);
