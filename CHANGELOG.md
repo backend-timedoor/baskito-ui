@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.7
+
+### Patch Changes
+
+- 88910aa: Fix Button Link Component
+
 ## 0.1.6
 
 ### Patch Changes
