@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.9
+
+### Patch Changes
+
+- ecc36ff: Update BKLinkButton component
+
 ## 0.1.8
 
 ### Patch Changes
