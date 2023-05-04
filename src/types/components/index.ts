@@ -3,6 +3,7 @@ export type {
   Shape as BKButtonShape,
   Size as BKButtonSize,
   Variant as BKButtonVariant,
+  Color as BKButtonColor
 } from "./Button/BKButton";
 
 // BKPagination
