@@ -1,12 +1,12 @@
 <template>
-  <a
+  <component
+    :is="Link"
     :class="buttonClass"
     :href="href"
     :disabled="props.disabled"
-    @click.prevent="handleClick"
   >
     <slot />
-  </a>
+  </component>
 </template>
 
 <script setup lang="ts">
@@ -18,7 +18,7 @@ import type {
 } from "../../types/components";
 import { useBKButton } from "../../composables/Button/useBKButton";
 import { computed, PropType } from "vue";
-import { router } from "@inertiajs/vue3";
+import { Link } from "@inertiajs/vue3";
 
 const { getClassVariant, getClassSize, getClassShape } = useBKButton();
 
@@ -68,6 +68,4 @@ const buttonClass = computed(() => [
   getClassSize(props.size),
   getClassShape(props.shape)
 ]);
-
-const handleClick = () => router.visit(props.href);
 </script>
