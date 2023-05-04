@@ -6,7 +6,7 @@
     :disabled="props.disabled"
   >
     <slot />
-</component>
+  </component>
 </template>
 
 <script setup lang="ts">
