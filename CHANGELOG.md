@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.8
+
+### Patch Changes
+
+- 58b01e1: Update BKButton component props
+
 ## 0.1.7
 
 ### Patch Changes
