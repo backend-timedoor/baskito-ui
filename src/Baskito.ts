@@ -1,6 +1,11 @@
 import { App, Plugin } from "vue";
 
 import * as Components from "./components";
+import { router } from "@inertiajs/core";
+
+interface Config {
+  router?: typeof router;
+}
 
 // Inject all components into the global @vue/runtime-core
 // This allows intellisense in templates w/out direct importing
@@ -20,10 +25,12 @@ declare module "@vue/runtime-core" {
 const plugin: Plugin = {
   // TODO: use options in the future
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  install(app: App) {
+  install(app: App, config: Config) {
     Object.entries(Components).forEach(([name, component]) => {
       app.component(name, component);
     });
+
+    app.provide('inertia-router', config.router || router);
   },
 };
 

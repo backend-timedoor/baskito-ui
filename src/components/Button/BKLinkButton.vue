@@ -19,10 +19,10 @@ import type {
   BKButtonColor
 } from "../../types/components";
 import { useBKButton } from "../../composables/Button/useBKButton";
-import { computed, PropType } from "vue";
-import { shouldIntercept } from "@inertiajs/core";
-import { router } from "@inertiajs/vue3";
+import { computed, inject, PropType } from "vue";
+import { router, shouldIntercept } from "@inertiajs/core";
 
+const inertia = inject("inertia-router", router);
 const { getClassVariant, getClassSize, getClassShape } = useBKButton();
 
 const props = defineProps({
@@ -93,17 +93,12 @@ const handleClick = (event: Event) => {
   console.log(shouldIntercept(event as KeyboardEvent))
   
   if (props.visit) {
-    router.visit(props.href, {
+    inertia.visit(props.href, {
         preserveScroll: props.preserveScroll,
         preserveState: props.preserveState
     });
   }
   
   return;
-  // if (shouldIntercept(event)) {
-  //   event.preventDefault();
-
-  //   
-  // }
 };
 </script>
