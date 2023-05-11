@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.16
+
+### Patch Changes
+
+- 6c52d61: Clean router
+
 ## 0.1.15
 
 ### Patch Changes
