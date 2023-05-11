@@ -65,10 +65,6 @@ const props = defineProps({
   preserveState: {
     type: Boolean,
     default: false
-  },
-  visit: {
-    type: Boolean,
-    default: false
   }
 });
 
@@ -85,20 +81,14 @@ const buttonClass = computed(() => [
 ]);
 
 const handleClick = (event: Event) => {
-  console.log(shouldIntercept(event as KeyboardEvent))
-
-  event.preventDefault();
-  event.stopImmediatePropagation();
-
-  console.log(shouldIntercept(event as KeyboardEvent))
-  
-  if (props.visit) {
+  if (shouldIntercept(event as KeyboardEvent)) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    
     inertia.visit(props.href, {
         preserveScroll: props.preserveScroll,
         preserveState: props.preserveState
     });
   }
-  
-  return;
 };
 </script>

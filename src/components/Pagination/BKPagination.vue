@@ -21,8 +21,11 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from "vue";
+import { PropType, inject } from "vue";
 import { BKPaginationLink } from "../../types/components";
+import { router, shouldIntercept } from "@inertiajs/core";
+
+const inertia = inject("inertia-router", router);
 
 const props = defineProps({
   links: {
@@ -40,11 +43,14 @@ const props = defineProps({
 });
 
 const handleClick = (event: Event, url: string) => {
-  event.preventDefault();
-  event.stopImmediatePropagation();
-  
-  console.log(url)
-  
-  return;
+  if (shouldIntercept(event as KeyboardEvent)) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    
+    inertia.visit(url, {
+        preserveScroll: props.preserveScroll,
+        preserveState: props.preserveState
+    });
+  }
 }
 </script>
