@@ -2,7 +2,7 @@
   "name": "@timedoor/baskito-ui",
   "displayName": "Baskito Component",
   "description": "Baskito Component using Vue 3 and Bootstrap 4",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "license": "MIT",
   "main": "./dist/baskito.umd.js",
   "module": "./dist/baskito.es.js",
