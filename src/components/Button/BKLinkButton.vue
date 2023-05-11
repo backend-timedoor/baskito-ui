@@ -1,9 +1,11 @@
 <template>
   <component
-    :is="Link"
+    :is="'a'"
     :class="buttonClass"
     :href="href"
     :disabled="props.disabled"
+    :v-bind="$attrs"
+    @click="handleClick"
   >
     <slot />
   </component>
@@ -18,7 +20,8 @@ import type {
 } from "../../types/components";
 import { useBKButton } from "../../composables/Button/useBKButton";
 import { computed, PropType } from "vue";
-import { Link } from "@inertiajs/vue3";
+import { shouldIntercept } from "@inertiajs/core";
+import { router } from "@inertiajs/vue3";
 
 const { getClassVariant, getClassSize, getClassShape } = useBKButton();
 
@@ -54,6 +57,14 @@ const props = defineProps({
   href: {
     type: String,
     required: true
+  },
+  preserveScroll: {
+    type: Boolean,
+    default: false
+  },
+  preserveState: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -68,4 +79,15 @@ const buttonClass = computed(() => [
   getClassSize(props.size),
   getClassShape(props.shape)
 ]);
+
+const handleClick = (event: KeyboardEvent) => {
+  if (shouldIntercept(event)) {
+    event.preventDefault();
+
+    router.visit(props.href, {
+      preserveScroll: props.preserveScroll,
+      preserveState: props.preserveState
+    });
+  }
+};
 </script>
