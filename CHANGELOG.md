@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.15
+
+### Patch Changes
+
+- 24ff8fc: Update router
+
 ## 0.1.14
 
 ### Patch Changes
