@@ -81,19 +81,23 @@ const buttonClass = computed(() => [
 ]);
 
 const handleClick = (event: Event) => {
+  console.log(shouldIntercept(event as KeyboardEvent))
+
   event.preventDefault();
   event.stopImmediatePropagation();
+
+  console.log(shouldIntercept(event as KeyboardEvent))
   
-  console.log(props.href)
+  router.visit(props.href, {
+      preserveScroll: props.preserveScroll,
+      preserveState: props.preserveState
+  });
   
   return;
   // if (shouldIntercept(event)) {
   //   event.preventDefault();
 
-  //   router.visit(props.href, {
-  //     preserveScroll: props.preserveScroll,
-  //     preserveState: props.preserveState
-  //   });
+  //   
   // }
 };
 </script>
