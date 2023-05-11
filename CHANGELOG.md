@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.1.11
+
+### Patch Changes
+
+- 8366398: Update BKLinkButton component
+
 ## 0.1.10
 
 ### Patch Changes
