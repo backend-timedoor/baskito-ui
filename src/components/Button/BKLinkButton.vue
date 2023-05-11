@@ -65,6 +65,10 @@ const props = defineProps({
   preserveState: {
     type: Boolean,
     default: false
+  },
+  visit: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -88,10 +92,12 @@ const handleClick = (event: Event) => {
 
   console.log(shouldIntercept(event as KeyboardEvent))
   
-  router.visit(props.href, {
-      preserveScroll: props.preserveScroll,
-      preserveState: props.preserveState
-  });
+  if (props.visit) {
+    router.visit(props.href, {
+        preserveScroll: props.preserveScroll,
+        preserveState: props.preserveState
+    });
+  }
   
   return;
   // if (shouldIntercept(event)) {
