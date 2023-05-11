@@ -8,21 +8,19 @@
         class="page-item"
         :class="{ active: link.active, disabled: link.url === null }"
       >
-        <Link
+        <a
           class="page-link"
-          :preserve-scroll="props.preserveScroll"
-          :preserve-state="props.preserveState"
           :href="link.url ?? '#'"
+          @click="handleClick($event, link.url ?? '#')"
         >
           <span v-html="link.label" />
-        </Link>
+        </a>
       </li>
     </ul>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3'
 import { PropType } from "vue";
 import { BKPaginationLink } from "../../types/components";
 
@@ -40,4 +38,13 @@ const props = defineProps({
     default: true,
   },
 });
+
+const handleClick = (event: Event, url: string) => {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  
+  console.log(url)
+  
+  return;
+}
 </script>

@@ -80,14 +80,20 @@ const buttonClass = computed(() => [
   getClassShape(props.shape)
 ]);
 
-const handleClick = (event: KeyboardEvent) => {
-  if (shouldIntercept(event)) {
-    event.preventDefault();
+const handleClick = (event: Event) => {
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  
+  console.log(props.href)
+  
+  return;
+  // if (shouldIntercept(event)) {
+  //   event.preventDefault();
 
-    router.visit(props.href, {
-      preserveScroll: props.preserveScroll,
-      preserveState: props.preserveState
-    });
-  }
+  //   router.visit(props.href, {
+  //     preserveScroll: props.preserveScroll,
+  //     preserveState: props.preserveState
+  //   });
+  // }
 };
 </script>
