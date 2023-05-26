@@ -30,7 +30,10 @@ const plugin: Plugin = {
       app.component(name, component);
     });
 
-    app.provide('inertia-router', config.router || router);
+    app.provide(
+      "inertia-router",
+      config && config.router ? config.router : router
+    );
   },
 };
 
