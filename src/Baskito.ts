@@ -18,6 +18,7 @@ declare module "@vue/runtime-core" {
     BKSelect: typeof Components.BKSelect;
     BKModal: typeof Components.BKModal;
     BKAlert: typeof Components.BKAlert;
+    BKBadge: typeof Components.BKBadge;
   }
 }
 
