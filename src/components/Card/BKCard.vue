@@ -1,6 +1,6 @@
 <template>
   <div :class="cardClass">
-    <component :is="headerTag" :class="cardHeaderClass" v-if="$slots.header || header">
+    <component :is="headerTag" v-if="$slots.header || header" :class="cardHeaderClass">
       <slot name="header">
         <h4>{{ header }}</h4>
       </slot>
@@ -8,7 +8,7 @@
     <component :is="bodyTag" :class="cardBodyClass">
       <slot></slot>
     </component>
-    <component :is="footerTag" :class="cardFooterClass" v-if="$slots.footer || footer">
+    <component :is="footerTag" v-if="$slots.footer || footer" :class="cardFooterClass">
       <slot name="footer">
         {{ footer }}
       </slot>
@@ -18,7 +18,10 @@
 
 <script setup lang="ts">
 import { Color, BackgroundColor } from "../../types"
+import { useBackgroundColor } from "../../composables/BackgroundColor/useBackgroundColor";
 import { computed, type PropType } from "vue";
+
+const { getBackgroundClass } = useBackgroundColor();
 
 const cardVariants = {
   primary: "card-primary",
@@ -29,18 +32,6 @@ const cardVariants = {
   info: "card-info",
   light: "card-light",
   dark: "card-dark",
-};
-
-const backgroundVariants = {
-  primary: "bg-primary",
-  secondary: "bg-secondary",
-  danger: "bg-danger",
-  success: "bg-success",
-  warning: "bg-warning",
-  info: "bg-info",
-  light: "bg-light",
-  dark: "bg-dark",
-  whitesmoke: "bg-whitesmoke",
 };
 
 const props = defineProps({
@@ -110,7 +101,7 @@ const cardHeaderClass = computed(() => [
   {
     "card-header": true,
   },
-  getBackgroundVariantClass(props.headerBgVariant),
+  getBackgroundClass(props.headerBgVariant),
   props.headerClass,
 ]);
 
@@ -118,7 +109,7 @@ const cardBodyClass = computed(() => [
   {
     "card-body": true,
   },
-  getBackgroundVariantClass(props.bodyBgVariant),
+  getBackgroundClass(props.bodyBgVariant),
   props.bodyClass,
 ]);
 
@@ -126,7 +117,7 @@ const cardFooterClass = computed(() => [
   {
     "card-footer": true,
   },
-  getBackgroundVariantClass(props.footerBgVariant),
+  getBackgroundClass(props.footerBgVariant),
   props.footerClass,
 ]);
 
@@ -134,11 +125,5 @@ const getCardVariantClass = (
   color: Color
 ): string => {
   return cardVariants[color];
-};
-
-const getBackgroundVariantClass = (
-  color: BackgroundColor
-): string => {
-  return backgroundVariants[color];
 };
 </script>
