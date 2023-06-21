@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.2.0
+
+### Minor Changes
+
+- 7b6f638: Add badge & card component
+
 ## 0.1.16
 
 ### Patch Changes
