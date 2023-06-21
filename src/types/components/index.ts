@@ -3,7 +3,7 @@ export type {
   Shape as BKButtonShape,
   Size as BKButtonSize,
   Variant as BKButtonVariant,
-  Color as BKButtonColor
+  Color as BKButtonColor,
 } from "./Button/BKButton";
 
 // BKPagination
@@ -13,3 +13,6 @@ export type {
   ResourceCollection as BKResourceCollection,
   PaginationData as BKPaginationData,
 } from "./Pagination/BKPagination";
+
+// BKBadge
+export type { Type as BKBadgeType } from "./Badge/BKBadge";

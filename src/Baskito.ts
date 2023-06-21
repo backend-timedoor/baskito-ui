@@ -18,6 +18,7 @@ declare module "@vue/runtime-core" {
     BKSelect: typeof Components.BKSelect;
     BKModal: typeof Components.BKModal;
     BKAlert: typeof Components.BKAlert;
+    BKBadge: typeof Components.BKBadge;
   }
 }
 
@@ -30,7 +31,10 @@ const plugin: Plugin = {
       app.component(name, component);
     });
 
-    app.provide('inertia-router', config.router || router);
+    app.provide(
+      "inertia-router",
+      config && config.router ? config.router : router
+    );
   },
 };
 
