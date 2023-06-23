@@ -20,6 +20,7 @@ declare module "@vue/runtime-core" {
     BKAlert: typeof Components.BKAlert;
     BKCard: typeof Components.BKCard;
     BKBadge: typeof Components.BKBadge;
+    BKTable: typeof Components.BKTable;
   }
 }
 

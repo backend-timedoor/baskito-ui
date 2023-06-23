@@ -22,7 +22,11 @@
   }
   &.table-bordered td,
   &.table-bordered th {
-    border-color: #f6f6f6;
+    border: 1px solid #dee2e6;
+  }
+  &.table-dark,
+  &.table-dark thead th {
+    color: #fff !important;
   }
 }
 

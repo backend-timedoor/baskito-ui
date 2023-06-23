@@ -7,3 +7,4 @@ export { default as BKModal } from "./Modal/BKModal.vue";
 export { default as BKAlert } from "./Alert/BKAlert.vue";
 export { default as BKCard } from "./Card/BKCard.vue";
 export { default as BKBadge } from "./Badge/BKBadge.vue";
+export { default as BKTable } from "./Table/BKTable.vue";
