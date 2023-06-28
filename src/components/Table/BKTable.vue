@@ -1,5 +1,9 @@
 <template>
-  <div :class="parentClass">
+  <table v-if="!responsive" :class="tableClass">
+    <caption v-if="props.caption">{{ props.caption }}</caption>
+    <slot></slot>
+  </table>
+  <div v-else :class="parentClass">
     <table :class="tableClass">
       <caption v-if="props.caption">{{ props.caption }}</caption>
       <slot></slot>
@@ -67,6 +71,6 @@ const tableClass = computed(() => [
 ]);
 
 function getSizeVariantClass(size: BKTableSize) {
-  return [sizeVariantClass[size]]
+  return sizeVariantClass[size]
 }
 </script>
