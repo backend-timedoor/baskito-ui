@@ -12,104 +12,120 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, watch, computed } from 'vue';
+import { type PropType, ref, watch, computed } from 'vue';
 
-  type SwitchType = "multiple" | "single";
-  type RadioButtonModelValueType = string | number | boolean | string[] | null;
+type SwitchType = "multiple" | "single";
+type RadioButtonModelValueType = string | number | boolean | string[] | null;
 
-  const types = {
-    multiple: "radio",
-    single: "checkbox"
-  };
+const types = {
+  multiple: "radio",
+  single: "checkbox"
+};
 
 const getSwitchType = (type: SwitchType) => types[type];
 
-  const props = withDefaults(
-    defineProps<{
-      type?: SwitchType;
-      name?: string;
-      value?: string;
-      modelValue?: RadioButtonModelValueType;
-      label?: string;
-      inline?: boolean;
-      disabled?: boolean;
-      checked?: boolean;
-    }>(),
-    {
-      type: () => "multiple",
-      value: () => "on",
-      disabled: () => false,
-      checked: () => false
-    }
-  );
-
-  const emit = defineEmits<{
-    (e: "update:modelValue", value: RadioButtonModelValueType): void;
-  }>();
-
-  const isChecked = ref(props.checked);
-
-  watch(
-    () => props.modelValue,
-    (modelValue) => {
-      if (modelValue) {
-        updateChecked(modelValue);
-      }
-    }
-  );
-
-  const switchType = computed(() => getSwitchType(props.type));
-
-  const updateChecked = (modelValue: RadioButtonModelValueType) => {
-    if (props.type == 'multiple') {
-      if (modelValue == props.value) {
-          isChecked.value = true;
-      } else {
-          isChecked.value = false;
-      }
-    } else {
-      if (Array.isArray(modelValue)) {
-        if (modelValue.includes(props.value)) {
-          isChecked.value = true;
-        } else {
-          isChecked.value = false;
-        }
-      } else if (typeof modelValue == "boolean") {
-          isChecked.value = modelValue;
-      }
-    }
-  };
-  
-  if (props.modelValue) {
-    updateChecked(props.modelValue);
+const props = defineProps({
+  type: {
+    type: String as PropType<SwitchType>,
+    default: "multiple"
+  },
+  name: {
+    type: String,
+    default: ""
+  },
+  value: {
+    type: String,
+    default: "on"
+  },
+  modelValue: {
+    type: [String, Number, Boolean, Array] as PropType<RadioButtonModelValueType>,
+    default: () => ""
+  },
+  label: {
+    type: String,
+    default: ""
+  },
+  inline: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  checked: {
+    type: Boolean,
+    default: false
   }
+});
 
-  const updateValue = (e: Event) => {
-    if (props.type == 'multiple') {
-      emit('update:modelValue', props.value);
+const emit = defineEmits<{
+  (e: "update:modelValue", value: RadioButtonModelValueType): void;
+}>();
+
+const isChecked = ref(props.checked);
+
+watch(
+  () => props.modelValue,
+  (modelValue) => {
+    if (modelValue) {
+      updateChecked(modelValue);
+    }
+  }
+);
+
+const switchType = computed(() => getSwitchType(props.type));
+
+const updateChecked = (modelValue: RadioButtonModelValueType) => {
+  if (props.type == 'multiple') {
+    if (modelValue == props.value) {
+        isChecked.value = true;
     } else {
-      const checked = (e.target as HTMLInputElement).checked;
-      let returnValue: RadioButtonModelValueType = checked;
+        isChecked.value = false;
+    }
+  } else {
+    if (Array.isArray(modelValue)) {
+      if (modelValue.includes(props.value)) {
+        isChecked.value = true;
+      } else {
+        isChecked.value = false;
+      }
+    } else if (typeof modelValue == "boolean") {
+        isChecked.value = modelValue;
+    }
+  }
+};
 
-      if (Array.isArray(props.modelValue)) {
-        returnValue = props.modelValue;
+if (props.modelValue) {
+  updateChecked(props.modelValue);
+}
 
-        if (checked) {
-          returnValue.push(props.value);
-        } else {
-          returnValue.splice(returnValue.indexOf(props.value), 1);
-        }
+const updateValue = (e: Event) => {
+  if (props.type == 'multiple') {
+    emit('update:modelValue', props.value);
+  } else {
+    const checked = (e.target as HTMLInputElement).checked;
+    let returnValue: RadioButtonModelValueType = checked;
 
-        returnValue = JSON.parse(JSON.stringify(returnValue));
+    if (Array.isArray(props.modelValue)) {
+      returnValue = props.modelValue;
+
+      if (checked) {
+        returnValue.push(props.value);
+      } else {
+        returnValue.splice(returnValue.indexOf(props.value), 1);
       }
 
-      emit('update:modelValue', returnValue);
+      returnValue = JSON.parse(JSON.stringify(returnValue));
     }
-  };
+
+    emit('update:modelValue', returnValue);
+  }
+};
 </script>
 
 <style>
-  .custom-switch {
-      padding-left: 0;
-  }
+.custom-switch {
+    padding-left: 0;
+}
 </style>

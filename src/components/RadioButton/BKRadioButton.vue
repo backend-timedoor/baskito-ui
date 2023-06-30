@@ -12,28 +12,44 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
+import { type PropType, ref, watch, computed } from 'vue';
 
 type RadioButtonModelValueType = string | number | null;
 
-const props = withDefaults(
-  defineProps<{
-    id: string;
-    name?: string;
-    value?: string;
-    modelValue?: RadioButtonModelValueType;
-    label?: string;
-    inline?: boolean;
-    disabled?: boolean;
-    checked?: boolean;
-  }>(),
-  {
-    value: () => "on",
-    inline: () => false,
-    disabled: () => false,
-    checked: () => false
+const props = defineProps({
+  id: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    default: ""
+  },
+  value: {
+    type: String,
+    default: "on"
+  },
+  modelValue: {
+    type: [String, Number, Boolean, Array] as PropType<RadioButtonModelValueType>,
+    default: () => ""
+  },
+  label: {
+    type: String,
+    default: ""
+  },
+  inline: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  checked: {
+    type: Boolean,
+    default: false
   }
-);
+});
 
 const parentId = computed(() => {
   return props.id + "-parent";

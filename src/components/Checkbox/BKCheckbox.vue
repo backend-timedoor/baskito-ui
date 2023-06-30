@@ -12,30 +12,48 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
+import { type PropType, ref, watch, computed } from 'vue';
 
 type CheckboxModelValueType = boolean | string | number | any[];
 
-const props = withDefaults(
-  defineProps<{
-    id: string;
-    name?: string;
-    value?: boolean | string | number;
-    uncheckedValue?: boolean | string | number;
-    modelValue?: CheckboxModelValueType;
-    label?: string;
-    inline?: boolean;
-    disabled?: boolean;
-    checked?: boolean;
-  }>(),
-  {
-    value: () => "on",
-    uncheckedValue: () => "off",
-    inline: () => false,
-    disabled: () => false,
-    checked: () => false
+const props = defineProps({
+  id: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    default: ""
+  },
+  value: {
+    type: [Boolean, String, Number],
+    default: "on"
+  },
+  uncheckedValue: {
+    type: [Boolean, String, Number],
+    default: "off"
+  },
+  modelValue: {
+    type: [Boolean, String, Number, Array] as PropType<CheckboxModelValueType>,
+    default: ""
+  },
+  label: {
+    type: String,
+    default: ""
+  },
+  inline: {
+    type: Boolean,
+    default: false
+  },
+  disabled: {
+    type: Boolean,
+    default: false
+  },
+  checked: {
+    type: Boolean,
+    default: false
   }
-);
+});
 
 const parentId = computed(() => {
   return props.id + "-wrapper";
