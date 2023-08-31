@@ -1,5 +1,5 @@
 <template>
-  <select ref="root">
+  <select ref="root" class="select2-hidden-accessible" :class="{ 'is-invalid': hasError }">
     <slot></slot>
   </select>
 </template>
@@ -11,18 +11,22 @@ import type { Options } from "select2";
 type SelectValue = string | number | string[] | null;
 
 const props = defineProps({
-    modelValue: {
-        type: [String, Number, Array] as PropType<SelectValue>,
-        default: null
-    },
-    options: {
-        type: Object as PropType<Options>,
-        default: () => ({})
-    },
-    allowEmpty: {
-        type: Boolean,
-        default: false
-    }
+  modelValue: {
+    type: [String, Number, Array] as PropType<SelectValue>,
+    default: null
+  },
+  options: {
+    type: Object as PropType<Options>,
+    default: () => ({})
+  },
+  allowEmpty: {
+    type: Boolean,
+    default: false
+  },
+  hasError: {
+    type: Boolean,
+    default: false
+  },
 })
 
 const emit = defineEmits<{
@@ -34,6 +38,14 @@ onMounted(createSelect2);
 onUnmounted(destroySelect2);
 
 const root = ref<HTMLInputElement | null>(null);
+
+watch(
+  () => props.hasError,
+  () => {
+    destroySelect2();
+    createSelect2();
+  }
+);
 
 watch(
   () => props.modelValue,
@@ -107,3 +119,11 @@ function destroySelect2() {
   }
 }
 </script>
+
+<style>
+.select2-container.select2-container--disabled.select2-container--focus .select2-selection--multiple,
+.select2-container.select2-container--disabled.select2-container--focus .select2-selection--single {
+  border-color: #e9ecef;
+  background-color: #e9ecef;
+}
+</style>
