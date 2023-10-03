@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.3.0
+
+### Minor Changes
+
+- 17d1d84: add table and selector component
+
 ## 0.2.0
 
 ### Minor Changes
