@@ -1,5 +1,11 @@
 # @timedoor/baskito-ui
 
+## 0.3.2
+
+### Patch Changes
+
+- 900cbc6: Remove unnecessary `display: none` style in modal. Close [#48](https://github.com/backend-timedoor/baskito-ui/issues/48)
+
 ## 0.3.1
 
 ### Patch Changes
