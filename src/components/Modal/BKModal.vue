@@ -1,13 +1,5 @@
 <template>
-  <div
-    :id="id"
-    class="modal"
-    :class="{ fade: withFade }"
-    tabindex="-1"
-    role="dialog"
-    style="display: none"
-    aria-hidden="true"
-  >
+  <div :id="id" class="modal" :class="{ fade: withFade }" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" :class="modalDialogClass" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -15,13 +7,8 @@
             <h5 class="modal-title">
               {{ title }}
             </h5>
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&#120;</span>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
             </button>
           </slot>
         </div>
@@ -30,18 +17,10 @@
         </div>
         <div class="modal-footer">
           <slot name="footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-dismiss="modal"
-            >
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">
               {{ closeText }}
             </button>
-            <button
-              type="button"
-              class="btn btn-primary"
-              @click="$emit('submit', $event)"
-            >
+            <button type="button" class="btn btn-primary" @click="$emit('submit', $event)">
               {{ submitText }}
             </button>
           </slot>
@@ -74,34 +53,34 @@ const emit = defineEmits<{
 }>();
 
 const props = defineProps({
-    id: {
-        type: String,
-        required: true
-    },
-    title: {
-        type: String,
-        default: ""
-    },
-    closeText: {
-        type: String,
-        default: "Close"
-    },
-    submitText: {
-        type: String,
-        default: "Save Changes"
-    },
-    isCenter: {
-        type: Boolean,
-        default: false
-    },
-    withFade: {
-        type: Boolean,
-        default: true
-    },
-    size: {
-        type: String as PropType<ModalSize>,
-        default: "md"
-    }
+  id: {
+    type: String,
+    required: true
+  },
+  title: {
+    type: String,
+    default: ""
+  },
+  closeText: {
+    type: String,
+    default: "Close"
+  },
+  submitText: {
+    type: String,
+    default: "Save Changes"
+  },
+  isCenter: {
+    type: Boolean,
+    default: false
+  },
+  withFade: {
+    type: Boolean,
+    default: true
+  },
+  size: {
+    type: String as PropType<ModalSize>,
+    default: "md"
+  }
 })
 
 $("body")
