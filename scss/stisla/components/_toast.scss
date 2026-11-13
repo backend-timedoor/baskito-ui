@@ -1,6 +1,9 @@
+@use "../functions";
+@use "../mixin";
+
 #toast-container > {
   div {
-    @include shadow;
+    @include mixin.shadow;
     padding: 20px 20px 20px 50px;
     opacity: 1;
   }
@@ -33,13 +36,13 @@
 
 .toast {
   &.toast-error {
-    background-color: color(danger);
+    background-color: functions.color(danger);
   }
   &.toast-warning {
-    background-color: color(warning);
+    background-color: functions.color(warning);
   }
   &.toast-success {
-    background-color: color(success);
+    background-color: functions.color(success);
   }
   &.toast-info {
     background-color: #fff;

@@ -1,3 +1,5 @@
+@use "../functions";
+
 .alert {
   color: #fff;
   border: none;
@@ -32,28 +34,28 @@
     color: #fff;
   }
   &.alert-primary {
-    background-color: color(primary);
+    background-color: functions.color(primary);
   }
   &.alert-secondary {
-    background-color: color(secondary);
+    background-color: functions.color(secondary);
   }
   &.alert-success {
-    background-color: color(success);
+    background-color: functions.color(success);
   }
   &.alert-info {
-    background-color: color(info);
+    background-color: functions.color(info);
   }
   &.alert-warning {
-    background-color: color(warning);
+    background-color: functions.color(warning);
   }
   &.alert-danger {
-    background-color: color(danger);
+    background-color: functions.color(danger);
   }
   &.alert-light {
-    background-color: color(light);
-    color: color(dark);
+    background-color: functions.color(light);
+    color: functions.color(dark);
   }
   &.alert-dark {
-    background-color: color(dark);
+    background-color: functions.color(dark);
   }
 }

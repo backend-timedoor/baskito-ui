@@ -1,3 +1,5 @@
+@use "../functions";
+
 .tab-content {
   &.no-padding {
     > .tab-pane {
@@ -13,7 +15,7 @@ ul.nav-tabs {
   li.nav-item {
     a.nav-link {
       i {
-        color: color(primary);
+        color: functions.color(primary);
       }
       span {
         display: block;
@@ -30,7 +32,7 @@ ul.nav-tabs {
   li.nav-item {
     a.nav-link.active {
       i {
-        color: color(dark);
+        color: functions.color(dark);
       }
     }
   }

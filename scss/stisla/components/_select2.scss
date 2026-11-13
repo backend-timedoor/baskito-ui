@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .select2 {
   width: 100% !important;
 }
@@ -19,25 +22,25 @@
     user-select: none;
     -webkit-user-select: none;
     outline: none;
-    @include form-control;
+    @include mixin.form-control;
   }
 }
 
 .select2-dropdown {
-  border-color: color_lighten(primary, 27%) !important;
+  border-color: functions.color_lighten(primary, 27%) !important;
 }
 
 .select2-container {
   &.select2-container--open .select2-selection--multiple {
-    @include form-control-focus;
+    @include mixin.form-control-focus;
   }
   &.select2-container--focus {
     .select2-selection--multiple, .select2-selection--single {
-      @include form-control-focus;
+      @include mixin.form-control-focus;
     }
   }
   &.select2-container--open .select2-selection--single {
-    @include form-control-focus;
+    @include mixin.form-control-focus;
   }
 }
 
@@ -65,7 +68,7 @@
   }
   .select2-selection--multiple {
     .select2-selection__choice {
-      @include shadow;
+      @include mixin.shadow;
       color: #fff;
       padding-left: 10px;
       padding-right: 10px;
@@ -84,7 +87,7 @@
 .select2-container--default .select2-selection--multiple .select2-selection__choice,
 .select2-container--default .select2-results__option[aria-selected=true],
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: color(primary);
+  background-color: functions.color(primary);
   color: #fff;
 }
 

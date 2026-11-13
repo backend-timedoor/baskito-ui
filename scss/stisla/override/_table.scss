@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .table {
   color: inherit;
   td, &:not(.table-bordered) th {
@@ -31,7 +34,7 @@
 }
 
 .table-links {
-  color: color(fontdark);
+  color: functions.color(fontdark);
   font-size: 12px;
   margin-top: 5px;
   opacity: 0;
@@ -49,7 +52,7 @@ table tr:hover .table-links {
   background-color: rgba(0, 0, 0, 0.02);
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .table-responsive {
     table {
       min-width: 800px;

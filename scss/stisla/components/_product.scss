@@ -1,3 +1,5 @@
+@use "../functions";
+
 .product-item {
   text-align: center;
   .product-image {
@@ -9,12 +11,12 @@
     margin-bottom: 10px;
   }
   .product-name {
-    color: color(fontdark);
+    color: functions.color(fontdark);
     font-weight: 700;
     margin-bottom: 3px;
   }
   .product-review {
-    color: color(warning);
+    color: functions.color(warning);
     margin-bottom: 3px;
   }
   .product-cta {

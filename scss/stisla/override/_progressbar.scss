@@ -1,3 +1,5 @@
+@use "../functions";
+
 .progress-bar {
-  background-color: color(primary);
+  background-color: functions.color(primary);
 }
