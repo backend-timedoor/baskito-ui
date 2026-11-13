@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .author-box {
   .author-box-left {
     float: left;
@@ -11,7 +14,7 @@
   }
   .author-box-picture {
     width: 100px;
-    @include shadow;
+    @include mixin.shadow;
   }
   .author-box-details {
     margin-left: 135px;
@@ -26,7 +29,7 @@
     font-weight: 600;
     letter-spacing: .5px;
     font-size: 12px;
-    color: color(fontdark);
+    color: functions.color(fontdark);
   }
   .author-box-description {
     line-height: 26px;
@@ -34,7 +37,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .author-box {
     .author-box-left {
       float: none;

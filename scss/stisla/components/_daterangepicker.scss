@@ -1,3 +1,5 @@
+@use "../functions";
+
 .daterangepicker {
   &.dropdown-menu {
     width: auto;
@@ -15,14 +17,14 @@
 
 .ranges {
   li {
-    color: color(primary);
+    color: functions.color(primary);
     &:hover,
     &.active {
-      background-color: color(primary);
+      background-color: functions.color(primary);
     }
   }
 }
 
 .daterangepicker td.active, .daterangepicker td.active:hover {
-  background-color: color(primary);
+  background-color: functions.color(primary);
 }

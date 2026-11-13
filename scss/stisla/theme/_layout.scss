@@ -1,6 +1,9 @@
+@use "../functions";
+@use "../mixin";
+
 .main-sidebar {
-  @include shadow;
-  @include main-sidebar;
+  @include mixin.shadow;
+  @include mixin.main-sidebar;
   left: 0;
 }
 
@@ -27,7 +30,7 @@ body.sidebar-mini {
     position: absolute;
     box-shadow: none;
     &:after {
-      @include shadow;
+      @include mixin.shadow;
       content: ' ';
       position: fixed;
       background-color: #fff;
@@ -90,8 +93,8 @@ body.sidebar-mini {
         }
         &.active {
           > a {
-            @include icon-shadow(primary);
-            background-color: color(primary);
+            @include mixin.icon-shadow(primary);
+            background-color: functions.color(primary);
             color: #fff;
           }
         }
@@ -102,12 +105,12 @@ body.sidebar-mini {
           top: 10px;
           width: 200px;
           display: none;
-          @include shadow(0 0 30px);
+          @include mixin.shadow(0 0 30px);
           li > a:focus,
           li.active > a,
           li.active > a:hover {
             color: #fff;
-            background-color: color(primary) !important;
+            background-color: functions.color(primary) !important;
           }
           li {
             a {
@@ -116,7 +119,7 @@ body.sidebar-mini {
               background-color: #fff;
               &.has-dropdown {
                 &:after {
-                  @include dropdown-indicator();
+                  @include mixin.dropdown-indicator();
                 }
               }
             }
@@ -129,7 +132,7 @@ body.sidebar-mini {
           li {
             &:hover {
               > a {
-                background-color: color_lighten(light, 7.6%);
+                background-color: functions.color_lighten(light, 7.6%);
               }
             }
             .dropdown-menu {
@@ -191,7 +194,7 @@ body.layout-2 {
             }
           }
           &:hover {
-            color: color(primary);
+            color: functions.color(primary);
             background-color: transparent;
           }
         }
@@ -236,7 +239,7 @@ body.layout-3 {
     right: 0;
   }
   .navbar.navbar-secondary {
-    @include shadow;
+    @include mixin.shadow;
     background-color: #fff;
     top: 70px;
     padding: 0;
@@ -245,7 +248,7 @@ body.layout-3 {
       > .nav-item {
         &.active {
           > .nav-link {
-            color: color(primary);
+            color: functions.color(primary);
             &:before {
               left: 35px;
               right: 0;
@@ -263,7 +266,7 @@ body.layout-3 {
           }
         }
         > .nav-link {
-          color: color_lighten(font, 10%);
+          color: functions.color_lighten(font, 10%);
           font-size: 13px;
           letter-spacing: .3px;
           height: 70px;
@@ -276,7 +279,7 @@ body.layout-3 {
           &.has-dropdown {
             margin-right: 35px;
             &:after {
-              @include dropdown-indicator;
+              @include mixin.dropdown-indicator;
               right: -20px;
             }
           }
@@ -287,7 +290,7 @@ body.layout-3 {
             right: initial;
             bottom: 0;
             height: 2px;
-            background-color: color(primary);
+            background-color: functions.color(primary);
             transition: all .5s;
           }
           span {
@@ -298,14 +301,14 @@ body.layout-3 {
             font-size: 16px;
           }
           &:hover {
-            color: color(dark) !important;
+            color: functions.color(dark) !important;
           }
         }
         .dropdown-menu {
           padding: 0;
           .nav-item {
             .nav-link {
-              color: color(font);
+              color: functions.color(font);
               font-weight: 600;
               letter-spacing: .3px;
               padding: 7px !important;
@@ -313,15 +316,15 @@ body.layout-3 {
               padding-right: 20px !important;
               &.has-dropdown {
                 &:after {
-                  @include dropdown-indicator();
+                  @include mixin.dropdown-indicator();
                   right: 15px;
                 }
               }
             }
             &:hover {
               > .nav-link {
-                background-color: color_lighten(light, 7.6%);
-                color: color(dark);
+                background-color: functions.color_lighten(light, 7.6%);
+                color: functions.color(dark);
               }
               > .dropdown-menu {
                 display: block !important;
@@ -332,7 +335,7 @@ body.layout-3 {
           }
           .nav-item.active > .nav-link,
           .nav-item .nav-link:focus {
-            background-color: color(primary);
+            background-color: functions.color(primary);
             color: #fff;
           }
         }
@@ -389,7 +392,7 @@ body.layout-3 {
       display: block;
       &.menu-header {
         padding: 3px 15px;
-        color: color_lighten(font, 20%);
+        color: functions.color_lighten(font, 20%);
         font-size: 10px;
         text-transform: uppercase;
         letter-spacing: 1.3px;
@@ -406,7 +409,7 @@ body.layout-3 {
         padding: 0 20px;
         width: 100%;
         letter-spacing: .3px;
-        color: color_lighten(font, 5%);
+        color: functions.color_lighten(font, 5%);
         text-decoration: none;
         .badge {
           float: right;
@@ -423,14 +426,14 @@ body.layout-3 {
           width: 100%;
         }
         &:hover {
-          background-color: color_lighten(light, 6.5%);
+          background-color: functions.color_lighten(light, 6.5%);
         }
       }
       &.active {
         a {
-          color: color(primary);
+          color: functions.color(primary);
           font-weight: 600;
-          background-color: color_lighten(light, 6.5%);
+          background-color: functions.color_lighten(light, 6.5%);
           &.has-dropdown {
             &:after {
               transform: translate(0, -50%) rotate(90deg);
@@ -438,19 +441,19 @@ body.layout-3 {
           }
         }
         ul.dropdown-menu {
-          background-color: color_lighten(light, 6.5%);
+          background-color: functions.color_lighten(light, 6.5%);
         }
       }
       a.has-dropdown {
         &:after {
-          @include dropdown-indicator();
+          @include mixin.dropdown-indicator();
         }
       }
       &.active > ul.dropdown-menu {
         li {
           a {
             &:hover {
-              background-color: color_lighten(light, 6.5%);
+              background-color: functions.color_lighten(light, 6.5%);
             }
           }
         }
@@ -466,17 +469,17 @@ body.layout-3 {
         background-color: transparent;
         li {
           a {
-            color: color_lighten(font, 10%);
+            color: functions.color_lighten(font, 10%);
             height: 35px;
             padding-left: 65px;
             font-weight: 400;
             &:hover {
-              color: color(primary);
+              color: functions.color(primary);
               background-color: inherit;
             }
           }
           &.active > a {
-            color: color(primary);
+            color: functions.color(primary);
             font-weight: 600;
           }
           a i {
@@ -503,8 +506,8 @@ body.layout-3 {
 .main-footer {
   padding: 20px 30px 20px 280px;
   margin-top: 40px;
-  color: color(muted);
-  border-top: 1px solid color(light);
+  color: functions.color(muted);
+  border-top: 1px solid functions.color(light);
   display: inline-block;
   width: 100%;
   .footer-left {
@@ -527,16 +530,16 @@ body:not(.sidebar-mini) .sidebar-style-1 {
     li {
       &.active {
         a {
-          background-color: color(primary);
+          background-color: functions.color(primary);
           color: #fff;
         }
         ul {
           &.dropdown-menu {
             li {
               a {
-                color: color_lighten(primary, 28%);
+                color: functions.color_lighten(primary, 28%);
                 &:hover {
-                  background-color: color(primary);
+                  background-color: functions.color(primary);
                   color: #fff;
                 }
               }
@@ -569,7 +572,7 @@ body:not(.sidebar-mini) .sidebar-style-2 {
             transform: translateY(-50%);
             height: 25px;
             width: 4px;
-            background-color: color(primary);
+            background-color: functions.color(primary);
           }
         }
       }

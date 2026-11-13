@@ -1,6 +1,9 @@
+@use "../functions";
+@use "../mixin";
+
 .buttons {
   .btn {
-    @include children-margin;
+    @include mixin.children-margin;
   }
 }
 
@@ -69,7 +72,7 @@
   &:not(.btn-social):not(.btn-social-icon) {
     &:active, &:focus, &:hover {
       border-color: transparent !important;
-      background-color: color_lighten(light, 10%);
+      background-color: functions.color_lighten(light, 10%);
     }
   }
   > i {
@@ -118,149 +121,149 @@
 }
 
 .btn-secondary, .btn-secondary.disabled {
-  @include button-shadow(secondary, 7%);
-  background-color: color(secondary);
-  border-color: color(secondary);
+  @include mixin.button-shadow(secondary, 7%);
+  background-color: functions.color(secondary);
+  border-color: functions.color(secondary);
   color: #fff;
   &:hover, &:focus, &:active {
-    background-color: color_darken(secondary, 5%) !important;
+    background-color: functions.color_darken(secondary, 5%) !important;
     color: #fff !important;
   }
 }
 
 .btn-outline-secondary, .btn-outline-secondary.disabled {
   &:hover, &:focus, &:active {
-    background-color: color(secondary) !important;
+    background-color: functions.color(secondary) !important;
     color: #fff !important;
   }
 }
 
 .btn-success, .btn-success.disabled {
-  @include button-shadow(success);
-  background-color: color(success);
-  border-color: color(success);
+  @include mixin.button-shadow(success);
+  background-color: functions.color(success);
+  border-color: functions.color(success);
   color: #fff;
   &:hover, &:focus, &:active {
-    background-color: color_darken(success, 5%) !important;
+    background-color: functions.color_darken(success, 5%) !important;
     color: #fff !important;
   }
 }
 
 .btn-outline-success, .btn-outline-success.disabled {
   &:hover, &:focus, &:active {
-    background-color: color(success) !important;
+    background-color: functions.color(success) !important;
     color: #fff !important;
   }
 }
 
 .btn-danger, .btn-danger.disabled {
-  @include button-shadow(danger);
-  background-color: color(danger);
-  border-color: color(danger);
+  @include mixin.button-shadow(danger);
+  background-color: functions.color(danger);
+  border-color: functions.color(danger);
   color: #fff;
   &:hover, &:focus, &:active {
-    background-color: color_darken(danger, 13%) !important;
+    background-color: functions.color_darken(danger, 13%) !important;
   }
 }
 
 .btn-outline-danger, .btn-outline-danger.disabled {
   &:hover, &:focus, &:active {
-    background-color: color_darken(danger, 13%) !important;
+    background-color: functions.color_darken(danger, 13%) !important;
     color: #fff !important;
   }
 }
 
 .btn-dark, .btn-dark.disabled {
-  @include button-shadow(dark, 40%);
-  background-color: color(dark);
-  border-color: color(dark);
+  @include mixin.button-shadow(dark, 40%);
+  background-color: functions.color(dark);
+  border-color: functions.color(dark);
   color: #fff;
   &:hover, &:focus, &:active {
-    background-color: color_darken(dark, 20%) !important;
+    background-color: functions.color_darken(dark, 20%) !important;
   }
 }
 
 .btn-outline-dark, .btn-outline-dark.disabled {
   &:hover, &:focus, &:active {
-    background-color: color_darken(dark, 20%) !important;
+    background-color: functions.color_darken(dark, 20%) !important;
     color: #fff !important;
   }
 }
 
 .btn-light, .btn-light.disabled {
-  @include button-shadow(light, 1%);
-  background-color: color(light);
-  border-color: color(light);
-  color: color(dark);
+  @include mixin.button-shadow(light, 1%);
+  background-color: functions.color(light);
+  border-color: functions.color(light);
+  color: functions.color(dark);
   &:hover, &:focus, &:active {
-    background-color: color_darken(light, 10%) !important;
+    background-color: functions.color_darken(light, 10%) !important;
   }
 }
 
 .btn-outline-light, .btn-outline-light.disabled {
-  border-color: color(light);
-  color: color(light);
+  border-color: functions.color(light);
+  color: functions.color(light);
   &:hover, &:focus, &:active {
-    background-color: color(light) !important;
+    background-color: functions.color(light) !important;
     color: #fff !important;
   }
 }
 
 .btn-warning, .btn-warning.disabled {
-  @include button-shadow(warning);
-  background-color: color(warning);
-  border-color: color(warning);
+  @include mixin.button-shadow(warning);
+  background-color: functions.color(warning);
+  border-color: functions.color(warning);
   color: #fff;
   &:hover, &:focus, &:active {
-    background-color: color_darken(warning, 5%) !important;
+    background-color: functions.color_darken(warning, 5%) !important;
     color: #fff !important;
   }
 }
 
 .btn-outline-warning, .btn-outline-warning.disabled {
   &:hover, &:focus, &:active {
-    background-color: color(warning) !important;
+    background-color: functions.color(warning) !important;
     color: #fff !important;
   }
 }
 
 .btn-info, .btn-info.disabled {
-  @include button-shadow(info);
-  background-color: color(info);
-  border-color: color(info);
+  @include mixin.button-shadow(info);
+  background-color: functions.color(info);
+  border-color: functions.color(info);
   color: #fff;
   &:hover, &:focus, &:active {
-    background-color: color_darken(info, 10%) !important;
+    background-color: functions.color_darken(info, 10%) !important;
   }
 }
 
 .btn-outline-info, .btn-outline-info.disabled {
   &:hover, &:focus, &:active {
-    background-color: color_darken(info, 10%) !important;
+    background-color: functions.color_darken(info, 10%) !important;
     color: #fff !important;
   }
 }
 
 .btn-primary, .btn-primary.disabled {
-  @include button-shadow(primary);
-  background-color: color(primary);
-  border-color: color(primary);
+  @include mixin.button-shadow(primary);
+  background-color: functions.color(primary);
+  border-color: functions.color(primary);
   &:focus {
-    background-color: color_darken(primary, 10%) !important;
+    background-color: functions.color_darken(primary, 10%) !important;
     &:active {
-      background-color: color_darken(primary, 10%) !important;
+      background-color: functions.color_darken(primary, 10%) !important;
     }
   }
   &:active, &:hover {
-    background-color: color_darken(primary, 10%) !important;
+    background-color: functions.color_darken(primary, 10%) !important;
   }
 }
 
 .btn-outline-primary, .btn-outline-primary.disabled {
-  border-color: color(primary);
-  color: color(primary);
+  border-color: functions.color(primary);
+  color: functions.color(primary);
   &:hover, &:focus, &:active {
-    background-color: color(primary) !important;
+    background-color: functions.color(primary) !important;
     color: #fff;
   }
 }
@@ -270,7 +273,7 @@
   color: #fff;
   &:hover, &:focus, &:active {
     background-color: #fff;
-    color: color(primary);
+    color: functions.color(primary);
   }
 }
 
@@ -312,7 +315,7 @@
 .btn-group {
   .btn {
     &.active {
-      background-color: color(primary);
+      background-color: functions.color(primary);
       color: #fff;
     }
   }

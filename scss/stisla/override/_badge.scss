@@ -1,6 +1,9 @@
+@use "../functions";
+@use "../mixin";
+
 .badges {
   .badge {
-    @include children-margin;
+    @include mixin.children-margin;
   }
 }
 
@@ -15,30 +18,30 @@
     color: #fff;
   }
   &.badge-primary {
-  	background-color: color(primary);
+  background-color: functions.color(primary);
   }
   &.badge-secondary {
-    background-color: color(secondary);
+    background-color: functions.color(secondary);
   }
   &.badge-success {
-    background-color: color(success);
+    background-color: functions.color(success);
   }
   &.badge-info {
-    background-color: color(info);
+    background-color: functions.color(info);
   }
   &.badge-danger {
-    background-color: color(danger);
+    background-color: functions.color(danger);
   }
   &.badge-light {
-    background-color: color(light);
-    color: color(dark);
+    background-color: functions.color(light);
+    color: functions.color(dark);
   }
   &.badge-white {
-    background-color: color(white);
-    color: color(dark);
+    background-color: functions.color(white);
+    color: functions.color(dark);
   }
   &.badge-dark {
-    background-color: color(dark);
+    background-color: functions.color(dark);
   }
 }
 

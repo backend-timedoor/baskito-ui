@@ -1,3 +1,5 @@
+@use "../functions";
+
 .jumbotron {
-  background-color: color(light);
+  background-color: functions.color(light);
 }

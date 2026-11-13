@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .weather {
   .weather-icon {
     float: left;
@@ -21,7 +24,7 @@
     }
     .weather-text {
       font-size: 12px;
-      color: color(fontdark);
+      color: functions.color(fontdark);
       font-weight: 600;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -38,17 +41,17 @@
     padding: 10px;
     line-height: 1;
     border-radius: 3px;
-    border: 2px solid color(primary);
+    border: 2px solid functions.color(primary);
     font-size: 10px;
     font-weight: 500;
-    color: color(primary);
+    color: functions.color(primary);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .weather {
     text-align: center;
     .weather-icon {

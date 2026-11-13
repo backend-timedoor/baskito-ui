@@ -1,15 +1,19 @@
+@use "../functions";
+@use "../mixin";
+@use "../variable";
+
 @import url('//fonts.googleapis.com/css?family=Nunito:400,600,700,800');
 
 :root {
   /* Colors */
-  --primary:  #{color(primary)};
-  --secondary:  #{color(fontdark)};
-  --success:  #{color(success)};
-  --info:  #{color(info)};
-  --warning:  #{color(warning)};
-  --danger:  #{color(danger)};
-  --light:  #{color(light)};
-  --dark:  #{color(dark)};
+  --primary:  #{functions.color(primary)};
+  --secondary:  #{functions.color(fontdark)};
+  --success:  #{functions.color(success)};
+  --info:  #{functions.color(info)};
+  --warning:  #{functions.color(warning)};
+  --danger:  #{functions.color(danger)};
+  --light:  #{functions.color(light)};
+  --dark:  #{functions.color(dark)};
 }
 
 body, html {
@@ -17,16 +21,16 @@ body, html {
 }
 
 body {
-  background-color: color(body);
-  font-size: $font_size;
-  font-weight: $font_weight;
-  font-family: $font_family;
-  color: color(font);
+  background-color: functions.color(body);
+  font-size: variable.$font_size;
+  font-weight: variable.$font_weight;
+  font-family: variable.$font_family;
+  color: functions.color(font);
 }
 
 a.bb {
   text-decoration: none;
-  border-bottom: 1px solid color(primary);
+  border-bottom: 1px solid functions.color(primary);
   padding-bottom: 1px;
 }
 
@@ -48,7 +52,7 @@ a.bb {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 700;
-  color: color(fontdark);
+  color: functions.color(fontdark);
 }
 
 .text-time {
@@ -123,7 +127,7 @@ a.bb {
 
 .text-title {
   font-size: 14px;
-  color: color(fontdark);
+  color: functions.color(fontdark);
   font-weight: 600;
 }
 
@@ -132,7 +136,7 @@ a.bb {
 }
 
 .img-shadow {
-  @include shadow;
+  @include mixin.shadow;
 }
 
 .colors {
@@ -174,7 +178,7 @@ blockquote {
 }
 
 .bg-whitesmoke {
-  background-color: color(whitesmoke) !important;
+  background-color: functions.color(whitesmoke) !important;
 }
 
 .ion {
@@ -215,8 +219,8 @@ pre {
     font-size: 11px;
     text-align: center;
     &.circle-primary {
-      border-color: color(primary);
-      color: color(primary);
+      border-color: functions.color(primary);
+      color: functions.color(primary);
     }
   }
 }
@@ -235,41 +239,41 @@ pre {
 #visitorMap3 { height: 350px; }
 
 .shadow-primary {
-  @include shadow-lighten(primary);
+  @include mixin.shadow-lighten(primary);
 }
 
 .shadow-secondary {
-  @include shadow-lighten(secondary, 7%);
+  @include mixin.shadow-lighten(secondary, 7%);
 }
 
 .shadow-success {
-  @include shadow-lighten(success);
+  @include mixin.shadow-lighten(success);
 }
 
 .shadow-warning {
-  @include shadow-lighten(warning);
+  @include mixin.shadow-lighten(warning);
 }
 
 .shadow-danger {
-  @include shadow-lighten(danger);
+  @include mixin.shadow-lighten(danger);
 }
 
 .shadow-info {
-  @include shadow-lighten(info);
+  @include mixin.shadow-lighten(info);
 }
 
 .shadow-light {
-  @include shadow-lighten(light, 1%);
+  @include mixin.shadow-lighten(light, 1%);
 }
 
 .shadow-dark {
-  @include shadow-lighten(dark, 40%);
+  @include mixin.shadow-lighten(dark, 40%);
 }
 
 .is-online {
   width: 10px;
   height: 10px;
-  background-color: color(success);
+  background-color: functions.color(success);
   border-radius: 50%;
   display: inline-block;
 }
@@ -294,7 +298,7 @@ pre {
     right: 8px;
     width: 7px;
     height: 7px;
-    background-color: color(warning);
+    background-color: functions.color(warning);
     border-radius: 50%;
     animation: pulsate 1s ease-out;
     animation-iteration-count: infinite;
@@ -308,7 +312,7 @@ pre {
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .fc-overflow {
     width: 100%;
     overflow: auto;
@@ -325,18 +329,18 @@ pre {
 }
 
 .background-walk-y {
-  @include background_walk;
+  @include mixin.background_walk;
   background-size: 100%;
 }
 
-@include media-breakpoint-down(lg) {
+@include mixin.media-breakpoint-down(lg) {
   .background-walk-y {
     background-size: cover;
   }
 }
 
 .background-walk-x {
-  @include background_walk(backgroundWalkX);
+  @include mixin.background_walk(backgroundWalkX);
 }
 
 @keyframes backgroundWalkY {
@@ -359,13 +363,13 @@ pre {
 
 .overlay-gradient-bottom {
   &:after {
-    @include overlay(1, false, linear-gradient(to bottom, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.65) 100%));
+    @include mixin.overlay(1, false, linear-gradient(to bottom, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.65) 100%));
   }
 }
 
 .overlay-gradient-top {
   &:after {
-    @include overlay(1, false, linear-gradient(to top, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.65) 100%));
+    @include mixin.overlay(1, false, linear-gradient(to top, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.65) 100%));
   }
 }
 
@@ -382,43 +386,43 @@ pre {
 }
 
 .bg-paypal {
-  @include paypal;
+  @include mixin.paypal;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-visa {
-  @include visa;
+  @include mixin.visa;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-americanexpress {
-  @include americanexpress;
+  @include mixin.americanexpress;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-dinersclub {
-  @include dinersclub;
+  @include mixin.dinersclub;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-discover {
-  @include discover;
+  @include mixin.discover;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-jcb {
-  @include jcb;
+  @include mixin.jcb;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .bg-mastercard {
-  @include mastercard;
+  @include mixin.mastercard;
   background-repeat: no-repeat;
   background-size: cover;
 }

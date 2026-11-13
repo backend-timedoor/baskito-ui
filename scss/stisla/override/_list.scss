@@ -1,3 +1,5 @@
+@use "../functions";
+
 .list-unstyled-border li {
   border-bottom: 1px solid #f9f9f9;
   padding-bottom: 15px;
@@ -18,49 +20,49 @@
 
 .list-group-item {
   &.active {
-    background-color: color(primary);
+    background-color: functions.color(primary);
   }
   &.disabled {
-    color: color_darken(light, 8%);
+    color: functions.color_darken(light, 8%);
   }
 }
 
 .list-group-item-primary {
-  background-color: color(primary);
+  background-color: functions.color(primary);
   color: #fff;
 }
 
 .list-group-item-secondary {
-  background-color: color(secondary);
+  background-color: functions.color(secondary);
   color: #fff;
 }
 
 .list-group-item-success {
-  background-color: color(success);
+  background-color: functions.color(success);
   color: #fff;
 }
 
 .list-group-item-danger {
-  background-color: color(danger);
+  background-color: functions.color(danger);
   color: #fff;
 }
 
 .list-group-item-warning {
-  background-color: color(warning);
+  background-color: functions.color(warning);
   color: #fff;
 }
 
 .list-group-item-info {
-  background-color: color(info);
+  background-color: functions.color(info);
   color: #fff;
 }
 
 .list-group-item-light {
-  background-color: color(light);
-  color: color(dark);
+  background-color: functions.color(light);
+  color: functions.color(dark);
 }
 
 .list-group-item-dark {
-  background-color: color(dark);
+  background-color: functions.color(dark);
   color: #fff;
 }

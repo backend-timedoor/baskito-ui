@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "../functions";
+@use "../mixin";
+
 .navbar {
   height: 70px;
   left: 250px;
@@ -6,8 +10,8 @@
   z-index: 890;
   background-color: transparent;
   &.active {
-    background-color: color(primary);
-    @include shadow(to_opacity(primary, .2));
+    background-color: functions.color(primary);
+    @include mixin.shadow(functions.to_opacity(primary, .2));
   }
 }
 
@@ -18,7 +22,7 @@
   left: 0;
   width: 100%;
   height: 115px;
-  background-color: color(primary);
+  background-color: functions.color(primary);
   z-index: -1;
 }
 
@@ -100,7 +104,7 @@
         letter-spacing: 1.3px;
         font-weight: 600;
         font-size: 10px;
-        color: color_lighten(font, 30%);
+        color: functions.color_lighten(font, 30%);
       }
       .search-item {
         display: flex;
@@ -108,12 +112,12 @@
           display: block;
           padding: 13px 18px;
           text-decoration: none;
-          color: color(fontdark);
+          color: functions.color(fontdark);
           font-weight: 600;
           display: flex;
           align-items: center;
           &:hover {
-            background-color: color_lighten(primary, 30%);
+            background-color: functions.color_lighten(primary, 30%);
           }
           &:not(.search-close) {
             width: 100%;
@@ -142,7 +146,7 @@
     color: #fff;
   }
   .nav-link {
-    color: darken(#fff, 5%);
+    color: color.adjust(#fff, $lightness: -5%);
     padding-left: 15px !important;
     padding-right: 15px !important;
     padding-top: 0 !important;
@@ -173,7 +177,7 @@
       border-radius: 50%;
       overflow: hidden;
       .flag-icon {
-        @include shadow;
+        @include mixin.shadow;
         border-radius: 50%;
         line-height: 18px;
         height: 22px;
@@ -202,7 +206,7 @@
   display: flex;
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   body.search-show .navbar .form-inline .search-element {
     display: block;
   }
@@ -238,12 +242,12 @@
   }
 }
 
-@include media-breakpoint-only(sm) {
+@include mixin.media-breakpoint-only(sm) {
   .navbar .form-inline .search-element {
     display: block;
   }
 }
-@include media-breakpoint-only(md) {
+@include mixin.media-breakpoint-only(md) {
   .collapse {
     position: relative;
     .navbar-nav {
@@ -256,7 +260,7 @@
   .nav-collapse {
     position: relative;
     .navbar-nav {
-      @include shadow(0 0 30px);
+      @include mixin.shadow(0 0 30px);
       position: absolute;
       top: 40px;
       left: 0;
@@ -274,16 +278,16 @@
         }
         .nav-link {
           background-color: #fff;
-          color: color(font);
+          color: functions.color(font);
           &:hover {
-            background-color: color_lighten(light, 7.6%);
-            color: color(primary);
+            background-color: functions.color_lighten(light, 7.6%);
+            color: functions.color(primary);
           }
         }
         &:focus,
         &.active {
           > a {
-            background-color: color(primary);
+            background-color: functions.color(primary);
             color: #fff;
           }
         }

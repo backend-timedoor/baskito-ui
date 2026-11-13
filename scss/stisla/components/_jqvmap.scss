@@ -1,9 +1,11 @@
+@use "../functions";
+
 .jqvmap-circle {
   display: inline-block;
   width: 13px;
   height: 13px;
   background-color: #fff;
-  border: 3px solid color(primary);
+  border: 3px solid functions.color(primary);
   border-radius: 50%;
 }
 

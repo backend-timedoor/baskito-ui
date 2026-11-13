@@ -1,5 +1,8 @@
+@use "../functions";
+@use "../mixin";
+
 .nav-tabs .nav-item .nav-link {
-  color: color(primary);
+  color: functions.color(primary);
   &.active {
     color: #000;
   }
@@ -19,19 +22,19 @@
 .nav-pills {
   .nav-link.active, .show > .nav-link {
     color: #fff;
-    background-color: color(primary);
+    background-color: functions.color(primary);
   }
   .nav-item .nav-link {
-    color: color(primary);
+    color: functions.color(primary);
     padding-left: 15px !important;
     padding-right: 15px !important;
     &:hover {
-      background-color: color_lighten(primary, 31%);
+      background-color: functions.color_lighten(primary, 31%);
     }
     &.active {
-      @include button-shadow(primary);
+      @include mixin.button-shadow(primary);
       color: #fff;
-      background-color: color(primary);
+      background-color: functions.color(primary);
     }
     .badge {
       padding: 5px 8px;

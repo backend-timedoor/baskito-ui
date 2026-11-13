@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .chat-box {
   .chat-content {
     background-color: #f9f9f9 !important;
@@ -15,7 +18,7 @@
           text-align: right;
           .chat-text {
             text-align: left;
-            background-color: color(primary);
+            background-color: functions.color(primary);
             color: #fff;
           }
         }
@@ -31,7 +34,7 @@
       .chat-details {
         margin-left: 70px;
         .chat-text {
-          @include shadow;
+          @include mixin.shadow;
           background-color: #fff;
           padding: 10px 15px;
           border-radius: 3px;
@@ -83,7 +86,7 @@
       right: -5px;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
-      @include shadow;
+      @include mixin.shadow;
       i {
         margin-left: 0;
       }

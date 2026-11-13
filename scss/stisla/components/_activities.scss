@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .activities {
   display: flex;
   flex-wrap: wrap;
@@ -12,7 +15,7 @@
       top: 0;
       width: 2px;
       height: 100%;
-      background-color: color(primary);
+      background-color: functions.color(primary);
     }
     &:last-child {
       &:before {
@@ -20,7 +23,7 @@
       }
     }
     .activity-icon {
-      @include box();
+      @include mixin.box();
       margin-right: 20px;
       border-radius: 50%;
       flex-shrink: 0;
@@ -28,7 +31,7 @@
       z-index: 1;
     }
     .activity-detail {
-      @include card_base;
+      @include mixin.card_base;
       position: relative;
       padding: 15px;
       &:before {
@@ -42,7 +45,7 @@
       }
       h4 {
         font-size: 18px;
-        color: color(dark);
+        color: functions.color(dark);
       }
       p {
         margin-bottom: 0;

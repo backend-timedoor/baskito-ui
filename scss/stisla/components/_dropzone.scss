@@ -1,10 +1,13 @@
+@use "../functions";
+@use "../mixin";
+
 .dropzone {
-  border: 2px dashed color(primary);
+  border: 2px dashed functions.color(primary);
   min-height: 240px;
   text-align: center;
   .dz-message {
     font-size: 24px;
-    color: color(fontdark);
+    color: functions.color(fontdark);
     margin: 3.4em;
   }
   .dz-preview {
@@ -17,13 +20,13 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .dropzone .dz-message {
     margin: 2em;
   }
 }
 
-@include media-breakpoint-only(sm) {
+@include mixin.media-breakpoint-only(sm) {
   .dropzone {
     .dz-message {
       margin: 2.75em;

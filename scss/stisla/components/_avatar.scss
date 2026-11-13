@@ -1,11 +1,13 @@
+@use "../functions";
+
 /**
  * Thanks to Spectre.css
  */
 
 .avatar {
-  background: color(primary);
+  background: functions.color(primary);
   border-radius: 50%;
-  color: color(light);
+  color: functions.color(light);
   display: inline-block;
   font-size: 16px;
   font-weight: 300;
@@ -69,13 +71,13 @@
     height: .5em;
     width: .5em;
     &.online {
-      background: color(success);
+      background: functions.color(success);
     }
     &.busy {
-      background: color(danger);
+      background: functions.color(danger);
     }
     &.away {
-      background: color(warning);
+      background: functions.color(warning);
     }
   }
   &[data-initial]::before {

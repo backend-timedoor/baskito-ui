@@ -1,3 +1,5 @@
+@use "../functions";
+
 .owl-theme {
   .owl-item {
     padding: 10px 0;
@@ -7,7 +9,7 @@
     .owl-dot {
       &.active {
         span {
-          background-color: color(primary);
+          background-color: functions.color(primary);
         }
       }
     }
