@@ -43,7 +43,7 @@ const props = defineProps({
 });
 
 const handleClick = (event: Event, url: string) => {
-  if (shouldIntercept(event as KeyboardEvent)) {
+  if (shouldIntercept(event as MouseEvent)) {
     event.preventDefault();
     event.stopImmediatePropagation();
     

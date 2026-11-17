@@ -81,7 +81,7 @@ const buttonClass = computed(() => [
 ]);
 
 const handleClick = (event: Event) => {
-  if (shouldIntercept(event as KeyboardEvent)) {
+  if (shouldIntercept(event as MouseEvent)) {
     event.preventDefault();
     event.stopImmediatePropagation();
     
