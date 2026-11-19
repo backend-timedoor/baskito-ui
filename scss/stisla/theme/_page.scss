@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .page-error {
   height: 100%;
   width: 100%;
@@ -16,7 +19,7 @@
   .page-description {
     font-size: 18px;
     font-weight: 400;
-    color: color(fontdark);
+    color: functions.color(fontdark);
   }
   .page-search {
     margin: 40px auto;
@@ -32,7 +35,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .page-error {
     .page-search {
       width: 100%;

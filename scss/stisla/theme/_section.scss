@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .section {
   position: relative;
   z-index: 1;
@@ -5,8 +8,8 @@
     margin-top: -7px;
   }
   .section-header {
-    @include shadow;
-    @include card-base;
+    @include mixin.shadow;
+    @include mixin.card-base;
     padding: 20px;
     display: flex;
     align-items: center;
@@ -16,13 +19,13 @@
       display: inline-block;
       font-size: 24px;
       margin-top: 3px;
-      color: color(fontdark);
+      color: functions.color(fontdark);
     }
     .section-header-back {
       margin-right: 15px;
       .btn {
         &:hover {
-          background-color: color(primary);
+          background-color: functions.color(primary);
           color: #fff;
         }
       }
@@ -44,7 +47,7 @@
   }
   .section-title {
     font-size: 18px;
-    color: color(dark);
+    color: functions.color(dark);
     font-weight: 600;
     position: relative;
     margin: 30px 0 25px 0;
@@ -53,7 +56,7 @@
       border-radius: 5px;
       height: 8px;
       width: 30px;
-      background-color: color(section_title_line);
+      background-color: functions.color(section_title_line);
       display: inline-block;
       float: left;
       margin-top: 6px;
@@ -83,7 +86,7 @@
 }
 
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .section {
     .section-title {
       font-size: 14px;

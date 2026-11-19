@@ -1,7 +1,9 @@
+@use "../functions";
+
 .media {
   .media-right {
     float: right;
-    color: color(primary);
+    color: functions.color(primary);
     font-weight: 600;
     font-size: 16px;
   }
@@ -15,7 +17,7 @@
     margin-bottom: 5px;
     font-weight: 600;
     font-size: 15px;
-    color: color(fontdark);
+    color: functions.color(fontdark);
     a {
       font-weight: inherit;
       color: #000;
@@ -23,7 +25,7 @@
   }
   .media-description {
     line-height: 24px;
-    color: color(fontdark);
+    color: functions.color(fontdark);
   }
   .media-links {
     margin-top: 10px;
@@ -38,7 +40,7 @@
       font-size: 12px;
       font-weight: 600;
       margin-bottom: 5px;
-      color: color(fontdark);
+      color: functions.color(fontdark);
     }
   }
   .media-cta {
@@ -58,7 +60,7 @@
       .media-label {
         font-weight: 600;
         font-size: 12px;
-        color: color(fontdark);
+        color: functions.color(fontdark);
         letter-spacing: .5px;
       }
       .media-value {

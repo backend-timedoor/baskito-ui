@@ -1,10 +1,13 @@
+@use "../functions";
+@use "../mixin";
+
 .form-control,
 .input-group-text,
 .custom-select,
 .custom-file-label {
-  @include form-control;
+  @include mixin.form-control;
   &:focus {
-    @include form-control-focus;
+    @include mixin.form-control-focus;
   }
 }
 
@@ -39,25 +42,25 @@ select.form-control:not([size]):not([multiple]) {
   background-size: 40px;
   padding-right: 60px;
   &.paypal {
-    @include paypal;
+    @include mixin.paypal;
   }
   &.visa {
-    @include visa;
+    @include mixin.visa;
   }
   &.americanexpress {
-    @include americanexpress;
+    @include mixin.americanexpress;
   }
   &.dinersclub {
-    @include dinersclub;
+    @include mixin.dinersclub;
   }
   &.discover {
-    @include discover;
+    @include mixin.discover;
   }
   &.jcb {
-    @include jcb;
+    @include mixin.jcb;
   }
   &.mastercard {
-    @include mastercard;
+    @include mixin.mastercard;
   }
 }
 
@@ -66,7 +69,7 @@ select.form-control:not([size]):not([multiple]) {
   .control-label,
   > label {
     font-weight: 600;
-    color: color(fontdark);
+    color: functions.color(fontdark);
     font-size: 12px;
     letter-spacing: .5px;
   }
@@ -106,7 +109,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .input-group-append [class*="btn-outline-"] {
-  background-color: color_lighten(primary, 32.4%);
+  background-color: functions.color_lighten(primary, 32.4%);
 }
 
 .form-text {
@@ -116,7 +119,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .custom-radio .custom-control-input:checked~.custom-control-label::before,
 .custom-control-input:checked~.custom-control-label::before {
-  background-color: color(primary) !important;
+  background-color: functions.color(primary) !important;
 }
 
 .custom-checkbox-table {
@@ -139,7 +142,7 @@ select.form-control:not([size]):not([multiple]) {
   &:focus {
     + .custom-file-label {
       box-shadow: none;
-      border-color: color(primary);
+      border-color: functions.color(primary);
       &:after {
         border-color: transparent;
       }
@@ -179,7 +182,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .selectgroup-button {
-  @include form-control;
+  @include mixin.form-control;
   border-width: 1px;
   border-style: solid;
   display: block;
@@ -208,7 +211,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .selectgroup-input {
   &:checked + .selectgroup-button {
-    background-color: color(primary);
+    background-color: functions.color(primary);
     color: #fff;
     z-index: 1;
   }
@@ -284,13 +287,13 @@ select.form-control:not([size]):not([multiple]) {
 
 .custom-switch-input {
   &:checked ~ .custom-switch-indicator {
-    background: color(primary);
+    background: functions.color(primary);
     &:before {
       left: calc(1rem + 1px);
     }
   }
   &:focus ~ .custom-switch-indicator {
-    border-color: color(primary);
+    border-color: functions.color(primary);
   }
 }
 
@@ -317,7 +320,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .imagecheck-figure {
-  @include form-control;
+  @include mixin.form-control;
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
@@ -327,7 +330,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .imagecheck-input {
   &:focus ~ .imagecheck-figure {
-    border-color: color(primary);
+    border-color: functions.color(primary);
   }
   &:checked ~ .imagecheck-figure {
     border-color: rgba(0, 40, 100, 0.24);
@@ -347,7 +350,7 @@ select.form-control:not([size]):not([multiple]) {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background: color(primary) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center (center / 50%) 50%;
+  background: functions.color(primary) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") no-repeat center (center / 50%) 50%;
   color: #fff;
   z-index: 1;
   border-radius: 3px;
@@ -414,7 +417,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 .colorinput-color {
-  @include form-control;
+  @include mixin.form-control;
   border-width: 1px;
   border-style: solid;
   display: inline-block;

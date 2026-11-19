@@ -1,17 +1,20 @@
+@use "../functions";
+@use "../mixin";
+
 .pricing {
-  @include card-base;
+  @include mixin.card-base;
   text-align: center;
   &.pricing-highlight {
     .pricing-title {
-      background-color: color(primary);
+      background-color: functions.color(primary);
       color: #fff;
     }
     .pricing-cta {
       a {
-        background-color: color(primary);
+        background-color: functions.color(primary);
         color: #fff;
         &:hover {
-            background-color: color_darken(primary, 10%) !important;
+            background-color: functions.color_darken(primary, 10%) !important;
         }
       }
     }
@@ -24,8 +27,8 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2.5px;
-    background-color: color_lighten(light, 5%);
-    color: color(primary);
+    background-color: functions.color_lighten(light, 5%);
+    color: functions.color(primary);
     border-radius: 0 0 3px 3px;
     display: inline-block;
     padding: 5px 15px;
@@ -49,7 +52,7 @@
         line-height: 20px;
         border-radius: 50%;
         text-align: center;
-        background-color: color(success);
+        background-color: functions.color(success);
         color: #fff;
         margin-right: 10px;
         i {
@@ -63,7 +66,7 @@
     a {
       display: block;
       padding: 20px 40px;
-      background-color: color_lighten(light, 5%);
+      background-color: functions.color_lighten(light, 5%);
       text-transform: uppercase;
       letter-spacing: 2.5px;
       font-size: 14px;
@@ -74,7 +77,7 @@
         margin-left: 5px;
       }
       &:hover {
-        background-color: color(light);
+        background-color: functions.color(light);
       }
     }
   }

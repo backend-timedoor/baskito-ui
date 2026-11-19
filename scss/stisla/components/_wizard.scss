@@ -1,11 +1,14 @@
+@use "../functions";
+@use "../mixin";
+
 .wizard-steps {
   display: flex;
   margin: 0 -10px;
   margin-bottom: 60px;
   counter-reset: wizard-counter;
   .wizard-step {
-    @include card-base;
-    @include shadow(0 4px 8px, rgba(0,0,0,.05));
+    @include mixin.card-base;
+    @include mixin.shadow(0 4px 8px, rgba(0,0,0,.05));
     padding: 30px;
     text-align: center;
     flex-grow: 1;
@@ -24,46 +27,46 @@
       font-size: 10px;
       font-weight: 700;
       border-radius: 50%;
-      background-color: color(light);
+      background-color: functions.color(light);
     }
     &.wizard-step-active {
-      @include shadow-lighten(primary);
-      background-color: color(primary);
+      @include mixin.shadow-lighten(primary);
+      background-color: functions.color(primary);
       color: #fff;
       &:before {
-        background-color: color(primary);
+        background-color: functions.color(primary);
         color: #fff;
       }
     }
     &.wizard-step-success {
-      background-color: color(success);
+      background-color: functions.color(success);
       color: #fff;
       &:before {
-        background-color: color(success);
+        background-color: functions.color(success);
         color: #fff;
       }
     }
     &.wizard-step-danger {
-      background-color: color(danger);
+      background-color: functions.color(danger);
       color: #fff;
       &:before {
-        background-color: color(danger);
+        background-color: functions.color(danger);
         color: #fff;
       }
     }
     &.wizard-step-warning {
-      background-color: color(warning);
+      background-color: functions.color(warning);
       color: #fff;
       &:before {
-        background-color: color(warning);
+        background-color: functions.color(warning);
         color: #fff;
       }
     }
     &.wizard-step-info {
-      background-color: color(info);
+      background-color: functions.color(info);
       color: #fff;
       &:before {
-        background-color: color(info);
+        background-color: functions.color(info);
         color: #fff;
       }
     }
@@ -82,7 +85,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .wizard-steps {
     display: block;
     .wizard-step {

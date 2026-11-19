@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .swal-button {
   border-radius: 3px;
   font-size: 16px;
@@ -5,15 +8,15 @@
     box-shadow: none;
   }
   &.swal-button--confirm {
-    @include button-shadow(primary);
-    background-color: color(primary);
+    @include mixin.button-shadow(primary);
+    background-color: functions.color(primary);
     &:focus {
       opacity: .8;
     }
   }
   &.swal-button--danger {
-    @include button-shadow(danger);
-    background-color: color(danger);
+    @include mixin.button-shadow(danger);
+    background-color: functions.color(danger);
     &:focus {
       opacity: .8;
     }

@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .btn:focus,
 .btn:active,
 .btn:active:focus,
@@ -8,7 +11,7 @@
 }
 
 a {
-  color: color(primary);
+  color: functions.color(primary);
   font-weight: 500;
   transition: all .5s;
   -webkit-transition: all .5s;
@@ -24,71 +27,71 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 }
 
 .bg-primary {
-  background-color: color(primary) !important;
+  background-color: functions.color(primary) !important;
 }
 
 .bg-secondary {
-  background-color: color(secondary) !important;
+  background-color: functions.color(secondary) !important;
 }
 
 .bg-success {
-  background-color: color(success) !important;
+  background-color: functions.color(success) !important;
 }
 
 .bg-info {
-  background-color: color(info) !important;
+  background-color: functions.color(info) !important;
 }
 
 .bg-warning {
-  background-color: color(warning) !important;
+  background-color: functions.color(warning) !important;
 }
 
 .bg-danger {
-  background-color: color(danger) !important;
+  background-color: functions.color(danger) !important;
 }
 
 .bg-light {
-  background-color: color(light) !important;
+  background-color: functions.color(light) !important;
 }
 
 .bg-dark {
-  background-color: color(dark) !important;
+  background-color: functions.color(dark) !important;
 }
 
 .text-primary, .text-primary-all *, .text-primary-all *:before, .text-primary-all *:after {
-  color: color(primary) !important;
+  color: functions.color(primary) !important;
 }
 
 .text-secondary, .text-secondary-all *, .text-secondary-all *:before, .text-secondary-all *:after {
-  color: color(secondary) !important;
+  color: functions.color(secondary) !important;
 }
 
 .text-success, .text-success-all *, .text-success-all *:before, .text-success-all *:after {
-  color: color(success) !important;
+  color: functions.color(success) !important;
 }
 
 .text-info, .text-info-all *, .text-info-all *:before, .text-info-all *:after {
-  color: color(info) !important;
+  color: functions.color(info) !important;
 }
 
 .text-warning, .text-warning-all *, .text-warning-all *:before, .text-warning-all *:after {
-  color: color(warning) !important;
+  color: functions.color(warning) !important;
 }
 
 .text-danger, .text-danger-all *, .text-danger-all *:before, .text-danger-all *:after {
-  color: color(danger) !important;
+  color: functions.color(danger) !important;
 }
 
 .text-light, .text-light-all *, .text-light-all *:before, .text-light-all *:after {
-  color: color(light) !important;
+  color: functions.color(light) !important;
 }
 
 .text-white, .text-white-all *, .text-white-all *:before, .text-white-all *:after {
-  color: color(white) !important;
+  color: functions.color(white) !important;
 }
 
 .text-dark, .text-dark-all *, .text-dark-all *:before, .text-dark-all *:after {
-  color: color(dark) !important;
+  color: functions.color(dark) !important;
 }
 
 .font-weight-normal {
@@ -99,7 +102,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
   line-height: 34px;
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .lead {
     font-size: 17px;
     line-height: 30px;
@@ -116,9 +119,9 @@ p, ul:not(.list-unstyled), ol {
 }
 
 .shadow {
-  @include shadow;
+  @include mixin.shadow;
 }
 
 .text-muted {
-  color: color(muted) !important;
+  color: functions.color(muted) !important;
 }

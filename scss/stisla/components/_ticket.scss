@@ -1,3 +1,6 @@
+@use "../functions";
+@use "../mixin";
+
 .tickets-list {
   .ticket-item {
     text-decoration: none;
@@ -21,7 +24,7 @@
       display: flex;
       font-size: 12px;
       font-weight: 500;
-      color: color(fontdark);
+      color: functions.color(fontdark);
       letter-spacing: .5px;
       .bullet {
         margin: 0 10px;
@@ -45,13 +48,13 @@
       &:hover {
         background-color: rgba(63,82,227,.03);
         .ticket-title {
-          color: color(primary);
+          color: functions.color(primary);
         }
       }
       &.active {
-        @include button-shadow(primary);
+        @include mixin.button-shadow(primary);
         border-radius: 3px;
-        background-color: color(primary);
+        background-color: functions.color(primary);
         border-bottom: none;
         .ticket-title, .ticket-desc {
           color: #fff !important;
@@ -71,7 +74,7 @@
         display: flex;
         font-size: 11px;
         font-weight: 500;
-        color: color(fontdark);
+        color: functions.color(fontdark);
         letter-spacing: .5px;
         .bullet {
           margin: 0 10px;
@@ -105,7 +108,7 @@
           letter-spacing: .3px;
           font-size: 12px;
           font-weight: 500;
-          color: color(fontdark);
+          color: functions.color(fontdark);
           .bullet {
             margin: 0 10px;
           }
@@ -120,7 +123,7 @@
     background-color: #f2f2f2;
   }
   .ticket-description {
-    color: color(fontdark);
+    color: functions.color(fontdark);
     font-weight: 500;
     margin-top: 30px;
     line-height: 28px;
@@ -130,7 +133,7 @@
     .ticket-form {
       margin-top: 40px;
       .note-editable {
-        color: color(fontdark);
+        color: functions.color(fontdark);
         font-weight: 500;
         p {
           margin-bottom: 5px;
@@ -141,7 +144,7 @@
 }
 
 
-@include media-breakpoint-only(sm) {
+@include mixin.media-breakpoint-only(sm) {
   .tickets {
     display: inline-block;
     .ticket-items {
@@ -156,7 +159,7 @@
   }
 }
 
-@include media-breakpoint-only(md) {
+@include mixin.media-breakpoint-only(md) {
   .tickets {
     flex-wrap: wrap;
     margin: 0 -15px;

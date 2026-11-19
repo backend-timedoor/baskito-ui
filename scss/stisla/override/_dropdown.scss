@@ -1,10 +1,13 @@
+@use "../functions";
+@use "../mixin";
+
 .dropdown-item.has-icon i {
   margin-top: -1px;
   font-size: 13px;
 }
 
 .dropdown-menu {
-  @include shadow(0 10px 40px 0, rgba(51, 73, 94, 0.15));
+  @include mixin.shadow(0 10px 40px 0, rgba(51, 73, 94, 0.15));
   border: none;
   width: 200px;
   &.show {
@@ -18,17 +21,17 @@
     font-size: 10px;
     letter-spacing: 1.5px;
     font-weight: 700;
-    color: color(dark) !important;
+    color: functions.color(dark) !important;
     padding: 10px 20px;
     line-height: 20px;
-    color: color(muted);
+    color: functions.color(muted);
   }
   &.dropdown-menu-sm {
     a {
       font-size: 14px;
       letter-spacing: normal;
       padding: 10px 20px;
-      color: color(font);
+      color: functions.color(font);
     }
   }
 }
@@ -40,7 +43,7 @@ a.dropdown-item {
   &:focus,
   &:active,
   &.active {
-    background-color: color(primary);
+    background-color: functions.color(primary);
     color: #fff!important;
   }
 }
@@ -86,7 +89,7 @@ a.dropdown-item {
     .dropdown-item-desc {
       line-height: 24px;
       white-space: normal;
-      color: color(fontdark);
+      color: functions.color(fontdark);
       margin-left: 60px;
       b {
         font-weight: 600;
@@ -97,7 +100,7 @@ a.dropdown-item {
       }
     }
     &:focus {
-      background-color: color(primary);
+      background-color: functions.color(primary);
       .dropdown-item-desc {
         color: #fff !important;
         b {
@@ -106,9 +109,9 @@ a.dropdown-item {
       }
     }
     &.dropdown-item-unread:active .dropdown-item-desc {
-      color: color(font);
+      color: functions.color(font);
       b {
-        color: color(font);
+        color: functions.color(font);
       }
     }
     &:active {
@@ -124,9 +127,9 @@ a.dropdown-item {
       border-bottom-color: #f2f2f2;
       &:focus {
         .dropdown-item-desc {
-          color: color(font) !important;
+          color: functions.color(font) !important;
           b {
-            color: color(font) !important;
+            color: functions.color(font) !important;
           }
         }
       }
@@ -191,13 +194,13 @@ a.dropdown-item {
       margin-top: -6px;
     }
     &.active {
-      background-color: color(primary);
+      background-color: functions.color(primary);
       color: #fff;
     }
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include mixin.media-breakpoint-down(xs) {
   .dropdown-list-toggle {
     position: static;
     .dropdown-list {
